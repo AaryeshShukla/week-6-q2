@@ -6,13 +6,8 @@ footer: "Product Docs | 23f2003825@ds.study.iitm.ac.in"
 theme: custom
 ---
 
-<!--
-==================================================
-CUSTOM THEME
-==================================================
--->
+<!-- Custom theme styling -->
 <style>
-/* Custom theme called 'custom' */
 section {
   font-family: 'Segoe UI', sans-serif;
   padding: 40px;
@@ -34,6 +29,15 @@ h2 {
   border-radius: 8px;
   font-size: 20px;
 }
+
+.fragment {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+section .fragment.current-fragment {
+  opacity: 1;
+}
 </style>
 
 ---
@@ -47,7 +51,7 @@ h2 {
 
 # Why Marp?
 
-<div class="custom-box">
+<div class="custom-box fragment">
 Marp allows developers to use Markdown to create presentations  
 that stay version-controlled and exportable to PDF, PPTX, and HTML.
 </div>
@@ -70,23 +74,10 @@ Here is an example using LaTeX math:
 
 ## Time Complexity Formula
 
+<p class="fragment">
 $$
 T(n) = n \log n + 2n + 5
 $$
+</p>
 
 Where:  
-- \( n \): Input size  
-- \( n \log n \): Dominant term  
-- Final complexity:  
-  \[
-  T(n) = O(n \log n)
-  \]
-
----
-
-# Sample Code Block
-
-```python
-def process(items):
-    for i in items:      # O(n)
-        binary_search(i) # O(log n)
